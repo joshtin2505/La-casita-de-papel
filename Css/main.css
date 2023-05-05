@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -6,12 +7,44 @@
     list-style: none;
     color: white;
     font-family: 'Roboto', sans-serif;
+    --claro: #e8e8e8;
+    --oscuro:#212121;
+    /* Paleta de colores */
+    --color1: #254E7A;
+    --color2: #5584B0;
+    --color3: #81C2E6;
+    --color4: #CBE3EF;
 }
-
+body {
+    background: url(/image/Backround.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed
+}
+.up{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 2em;
+    right: 3em;
+    background-color: rgba(255, 255, 255, 0.171);
+    backdrop-filter: blur(10px);
+    width: 2em;
+    height: 2em;
+    border-radius: 50px;
+    transition: .3s;
+}
+.up:hover{
+    background-color: var(--color2);
+}
+.up a .fa-arrow-up{
+    font-size: 130%;
+}
 a:hover {
     transition: all 0.5s ease;
     scale: 1.05;
-    color: #088395;
+    color: var(--color1);
     text-decoration: underline;
 }
 
@@ -29,9 +62,9 @@ nav {
     width: 80%;
     padding: 1rem;
     backdrop-filter: blur(3px);
-    border-bottom: 2px solid #ffffff;
-    border-right: 2px solid #ffffff;
-    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid var(--color4);
+    border-right: 2px solid var(--color4);
+    border-left: 2px solid var(--color4);
 }
 
 .name-page {
@@ -54,14 +87,13 @@ nav ul a {
     align-items: center;
     width: 100%;
     height: 100vh;
-    background: url(/image/Backround.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed
+
 }
 
 h1 strong {
-    color: #05BFDB;
+    color: var(--color1);
+    font-size: 110%;
+    -webkit-text-stroke: .3px rgb(255, 255, 255);
 }
 
 .container-Productos {
@@ -70,93 +102,298 @@ h1 strong {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
-    background: linear-gradient(-200deg, #1fa2ff8c, #12dcfba9, #A5D7E8);
+    min-height: 100vh;
+    padding-bottom: 9vh;
+    background: linear-gradient(-200deg, var(--color1), var(--color2), var(--color3));
+    background-size: cover;
+
 }
 
 .container-Productos .txt-cont {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 10%;
+    height: 5%;
     top: 0;
 }
-.txt-cont h2{
-    margin: 2.5em 0;
+
+.txt-cont h2 {
+    margin: 2em 0;
 }
+
 .container-items {
     margin-top: 30px;
     /* investigar este codigo */
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    grid-gap: 30px;
-    grid-row-gap: 30px;
-    height: 90%;
-    width: 70%;
+    gap: 10px; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    height: 95%;
+    width: 80%;
     transition: 0.3s;
+    
+
 }
 
 /* items */
-.container-items .item {
+.item {
     position: relative;
+    width: 11.875em;
+    height: 16.5em;
+    box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 120ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding: 0.5em;
+    padding-bottom: 3.4em;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.item:hover {
+    box-shadow: 1px 1px 13px rgba(0, 0, 0, 0.815);
+    transform: scale(1.02);
+}
+
+.item::after {
+    content: "Add to Cart";
+    padding-top: 1.25em;
+    padding-left: 1.25em;
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    background: var(--color1);
+    color: #fff;
+    height: 2.5em;
+    width: 90%;
+    transition: .4s;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.item .title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    position: absolute;
+    left: 0.625em;
+    bottom: 1.875em;
+    font-weight: 400;
+    color: #000;
+}
+
+.item .price {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 0.9em;
+    position: absolute;
+    left: 0.625em;
+    bottom: 0.625em;
+    color: #000;
+}
+
+.item:hover::after {
+    bottom: 0;
+    opacity: 1;
+}
+
+.item:active {
+    transform: scale(0.98);
+}
+
+.item:active::after {
+    content: "Added !";
+    height: 3.125em;
+}
+
+.text {
+    max-width: 55px;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+}
+
+.image-1{
+    background: url('/image/P1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.image-2{
+    background: var(--color4);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.image-3{
+    background: var(--color4);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.image-4{
+    background: var(--color4);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.image-5{
+    background: var(--color4);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.image-6{
+    background: var(--color4);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.image-7{
+    background: var(--color4);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.image-8{
+    background: var(--color4);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.image-9{
+    background: var(--color4);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.image-10 {
+    background: var(--color4);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.image {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+}
+/* Sercicios */
+.container-servicios{
+    height: 100vh;
+    background: var(--color2);
+}
+.servicios{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3em;
+}
+.servicios-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+}
+.container-servicios .serv {
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 10em;
+    height: 60%;
+    width: 20%
+}
+/* Quienes somos */
+
+.container-origen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.container-origen .quienes-somos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 90%;
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    background-color: rgba(156, 156, 156, 0.11);
+}
+.qs-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+}
+.perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    height: 70%;
+    width: 25%;
+    margin-bottom: 5%;
+    background-color: #ffffff8c;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    
+}
+
+.perfil figure{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-width: 250px;
-    min-height: 250px;
-    max-width: 250px;
-    max-height: 250px;
-    border: 1px solid #777;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: 0.3s;
-}
-
-.two-it{
-    background: url('/image/P1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    
-}
-.container-items .item:hover {
-    box-shadow: 10px 10px 20px #777;
-    scale: 1.05;
-}
-
-.container-items .item img {
-    height: 100%;
+    height: 40%;
     width: 100%;
-    z-index: 1;
 }
 
-.container-items .item .hover{
-    position: relative;
-    z-index: 3;
-    opacity: 0;
+.perfil .cont-txt{
+    width: 100%;
+    height: 60%;
 }
-
-.container-items .item .titulo-item {
-    display: block;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
+.fund-img{
+    width: 5em;
+    border-radius: 50px;
+    border: 2px solid #ffffff8c;
 }
+.casita-de-papel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70%;
+    width: 60%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    background-color: #ffffff8c;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
 
-.container-items .item .precio-item {
-    display: block;
-    font-weight: bold;
-    text-align: center;
-    font-size: 22px;
-}
 
-.boton-item {
-    display: block;
-    margin: 10px auto;
-    border: none;
-    background: black;
-    color: white;
-    padding: 5px 15px;
-    border-radius: 10px;
-    cursor: pointer;
 }
