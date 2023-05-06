@@ -1,0 +1,204 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    --claro: #e8e8e8;
+    --oscuro:#212121;
+    /* Paleta de colores */
+    --color1: #254E7A;
+    --color2: #5584B0;
+    --color3: #81C2E6;
+    --color4: #CBE3EF;
+}
+body {
+    background: url(/image/Backround.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed
+}
+.up{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 2em;
+    right: 3em;
+    background-color: rgba(255, 255, 255, 0.171);
+    backdrop-filter: blur(10px);
+    width: 2em;
+    height: 2em;
+    border-radius: 50px;
+    transition: .3s;
+}
+.up:hover{
+    background-color: var(--color2);
+}
+.up a .fa-arrow-up{
+    font-size: 130%;
+}
+a:hover {
+    transition: all 0.5s ease;
+    scale: 1.05;
+    color: var(--color1);
+    text-decoration: underline;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 1rem;
+    backdrop-filter: blur(3px);
+    border-bottom: 2px solid var(--color4);
+    border-right: 2px solid var(--color4);
+    border-left: 2px solid var(--color4);
+}
+
+.name-page {
+    font-size: 110%;
+    font-weight: bold;
+}
+
+nav ul {
+    width: 60%;
+    justify-content: center;
+}
+
+nav ul a {
+    margin: 0.5rem;
+}
+
+/* Servicios */
+.container-servicios{
+    height: 100vh;
+
+}
+.servicios{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3em;
+}
+.servicios-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    margin-top: 2em;
+}
+.container-servicios .serv {
+    position: relative;
+    width: 11.875em;
+    height: 16.5em;
+    box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 120ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff34;
+    backdrop-filter: blur(50px);
+    padding: 0.5em;
+    padding-bottom: 3.4em;
+    border-radius: 5px;
+    margin-bottom: 10em;
+    overflow: hidden;
+    transition: .4s;
+    height: 60%;
+    width: 20%
+}
+
+.serv:hover {
+    box-shadow: 1px 1px 13px rgba(0, 0, 0, 0.815);
+    transform: scale(1.02);
+}
+
+.serv::after {
+    content: "Mas información";
+    padding-top: 1.25em;
+    padding-left: 1.25em;
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    background: var(--color1);
+    color: #fff;
+    height: 2.5em;
+    width: 91%;
+    transition: .4s;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0;
+    border: 2px solid var(--color1);
+    border-radius: 5px 5px 5px 5px;
+}
+
+.title-serv{
+    left: 0.625em;
+    bottom: 1em;
+    font-size: 1.1em;
+    font-weight: 500;
+    position: absolute;
+    color: #000;
+    background: #ffffff56;
+    border-radius: 10px;
+    padding: 5px;
+}
+.price-serv{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 0.9em;
+    position: absolute;
+    left: 0.625em;
+    bottom: 0.625em;
+    color: #000; 
+}
+
+.serv:hover::after {
+    bottom: 0;
+    opacity: 1;
+}
+
+.serv:active {
+    transform: scale(0.98);
+}
+
+
+.image-serv {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+}
+
+.image-serv-1{
+    background: url(/image/To.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid var(--color2);
+}
+.image-serv-2{
+    background:  url(/image/Tp.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid var(--color2);
+
+}
